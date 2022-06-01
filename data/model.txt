@@ -1,0 +1,534 @@
+#==============================================================================
+#
+#3Dゲーム(仮) [model.txt]
+#Author:Kishimoto Eiji
+#
+#==============================================================================
+SCRIPT
+
+#------------------------------------------------------------------------------
+# モデルファイル名
+#------------------------------------------------------------------------------
+MODEL_FILENAME = data/MODEL/table.x		# [0]テーブル
+MODEL_FILENAME = data/MODEL/chair.x		# [1]椅子
+
+MODEL_FILENAME = data/MODEL/Teddy_bears/Teddy_bears_head.x			# [2]頭
+MODEL_FILENAME = data/MODEL/Teddy_bears/Teddy_bears_Left_arm.x		# [3]左腕
+MODEL_FILENAME = data/MODEL/Teddy_bears/Teddy_bears_Right_arm.x		# [4]右腕
+MODEL_FILENAME = data/MODEL/Teddy_bears/Teddy_bears_Left_leg.x		# [5]左脚
+MODEL_FILENAME = data/MODEL/Teddy_bears/Teddy_bears_Right_leg.x		# [6]右脚
+
+MODEL_FILENAME = data/MODEL/table_big.x		# [7]テーブル(追加)
+
+#------------------------------------------------------------------------------
+#モデル配置情報
+#------------------------------------------------------------------------------
+#------------------
+#テーブル&椅子(頭ゾーン)
+#------------------
+MODELSET
+	INDEX = 7
+	TYPE = 0
+	POS = 0.0 0.0 0.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -80.0 0.0 40.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -80.0 0.0 -40.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 80.0 0.0 40.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 80.0 0.0 -40.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 0.0 0.0 100.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 0.0 0.0 -100.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+#------------------
+#テーブル(左腕ゾーン)
+#------------------
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -500.0 0.0 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -500.0 28.5 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -350.0 0.0 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -350.0 28.5 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -350.0 57.0 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -190.0 0.0 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -190.0 28.5 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -190.0 57.0 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = -190.0 85.5 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+#------------------
+#椅子(右腕ゾーン)
+#------------------
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 500.0 0.0 500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 500.0 70.0 400.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 400.0 140.0 400.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 400.0 210.0 500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+#------------------
+#椅子(左脚ゾーン)
+#------------------
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -560.0 0.0 -500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 0.0 -500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 0.0 -500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 0.0 -500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -320.0 0.0 -500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -560.0 0.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 0.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 0.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 0.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -320.0 0.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -560.0 0.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 0.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 0.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 0.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -320.0 0.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -560.0 0.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 0.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 0.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 0.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -320.0 0.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -560.0 0.0 -700.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 0.0 -700.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 0.0 -700.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 0.0 -700.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -320.0 0.0 -700.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 35.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 35.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 35.0 -550.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 35.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 35.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 35.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -500.0 35.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 35.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -380.0 35.0 -650.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 70.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = -440.0 105.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+#------------------
+#テーブル&椅子(右脚ゾーン)
+#------------------
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = 500.0 0.0 -500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = 453.5 0.0 -546.5
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = 500.0 0.0 -593.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = 546.5 0.0 -546.5
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 0
+	TYPE = 0
+	POS = 516.5 30.0 -546.5
+	ROT = 0.0 0.0 1.57
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 430.0 30.0 -480.0
+	ROT = 0.0 0.785 -1.8
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 570.0 30.0 -480.0
+	ROT = 0.0 2.355 -1.8
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 570.0 30.0 -615.0
+	ROT = 0.0 -2.355 -1.8
+END_MODELSET
+
+MODELSET
+	INDEX = 1
+	TYPE = 0
+	POS = 430.0 30.0 -615.0
+	ROT = 0.0 -0.785 -1.8
+END_MODELSET
+
+#------------------
+#アイテム(クマのぬいぐるみ)
+#------------------
+MODELSET
+	INDEX = 2				#頭
+	TYPE = 1
+	POS = 0.0 70.0 0.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 3				#左腕
+	TYPE = 1
+	POS = -190.0 120.0 500.0
+	ROT = 0.0 1.57 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 4				#右腕
+	TYPE = 1
+	POS = 400.0 245.0 500.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 5				#左脚
+	TYPE = 1
+	POS = POS = -440.0 150.0 -600.0
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+MODELSET
+	INDEX = 6				#右脚
+	TYPE = 1
+	POS = 500.0 55.0 -546.5
+	ROT = 0.0 0.0 0.0
+END_MODELSET
+
+END_SCRIPT
