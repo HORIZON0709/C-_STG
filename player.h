@@ -23,9 +23,6 @@ private: /* 列挙型の定義 */
 		MAX
 	};
 
-private: /* 演算子オーバーロード */
-	CPlayer operator ++ ();		//「 ++ 」
-
 private: /* 定数の定義 */
 	static const int SHOT_INTERVAL = 15;	//弾発射の間隔( 60フレーム = 1秒 )
 	static float MOVE_SPEED;				//移動スピード

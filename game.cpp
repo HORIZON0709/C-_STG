@@ -43,12 +43,13 @@ void InitGame(void)
 {
 	CPlayer* pPlayer = nullptr;
 	CBullet* pBullet = nullptr;
+	CPolygon3D* pPolygon = nullptr;
 
 	InitCamera();	//カメラ
 	InitLight();	//ライト
 	pBullet->Init();	//弾
 	pPlayer->Init();	//プレイヤー
-	InitPolygon();	//ポリゴン
+	pPolygon->Init();	//ポリゴン
 	InitPause();	//ポーズ
 
 	//タイムの設定
@@ -67,6 +68,7 @@ void UninitGame(void)
 {
 	CPlayer* pPlayer = nullptr;
 	CBullet* pBullet = nullptr;
+	CPolygon3D* pPolygon = nullptr;
 
 	//サウンドの停止
 	StopSound();
@@ -75,7 +77,7 @@ void UninitGame(void)
 	UninitLight();		//ライト
 	pBullet->Uninit();		//弾
 	pPlayer->Uninit();		//プレイヤー
-	UninitPolygon();	//ポリゴン
+	pPolygon->Uninit();	//ポリゴン
 	UninitTime();		//タイム
 	UninitPause();		//ポーズ
 }
@@ -114,6 +116,7 @@ void UpdateGame(void)
 
 	CPlayer* pPlayer = nullptr;
 	CBullet* pBullet = nullptr;
+	CPolygon3D* pPolygon = nullptr;
 
 	switch (s_gameState)
 	{
@@ -122,7 +125,7 @@ void UpdateGame(void)
 		UpdateLight();		//ライト
 		pBullet->Update();		//弾
 		pPlayer->Update();		//プレイヤー
-		UpdatePolygon();	//ポリゴン
+		pPolygon->Update();		//ポリゴン
 		UpdateTime();		//タイム
 		break;
 
@@ -148,11 +151,12 @@ void DrawGame(void)
 {
 	CPlayer* pPlayer = nullptr;
 	CBullet* pBullet = nullptr;
+	CPolygon3D* pPolygon = nullptr;
 
 	//カメラの設定
 	SetCamera();
 
-	DrawPolygon();	//ポリゴン
+	pPolygon->Draw();	//ポリゴン
 	pPlayer->Draw();	//プレイヤー
 	DrawTime();		//タイム
 	pBullet->Draw();	//弾

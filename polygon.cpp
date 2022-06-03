@@ -9,65 +9,108 @@
 #include "texture.h"
 
 //***************************
-//スタティック変数宣言
+//静的メンバ変数宣言
 //***************************
-namespace
-{
-LPDIRECT3DVERTEXBUFFER9	s_pVtxBuff = NULL;		//頂点バッファへのポインタ
-LPDIRECT3DTEXTURE9		s_pTexture = NULL;		//テクスチャへのポインタ
-Polygon3D				s_polygon;				//ポリゴンの情報
-}// namespaceはここまで
+CPolygon3D* CPolygon3D::m_pPolygon = nullptr;	//ポインタ
 
 //================================================
-//ポリゴンの初期化処理
+//情報を取得
 //================================================
-void InitPolygon(void)
+CPolygon3D* CPolygon3D::GetInfo()
 {
-	memset(&s_polygon, 0, sizeof(s_polygon));
-
-	// 矩形の設定
-	s_polygon.idx = SetRectangle3D(TEXTURE_百鬼あやめ_3);
-
-	//構造体の変数の初期設定
-	s_polygon.pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	s_polygon.size = D3DXVECTOR3(SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f);
-
-	{//矩形の設定
-		SetPosRectangle3D(s_polygon.idx, s_polygon.pos);	//位置
-		SetSizeRectangle3D(s_polygon.idx, s_polygon.size);	//サイズ
-	}
+	return m_pPolygon;
 }
 
 //================================================
-//ポリゴンの終了処理
+//コンストラクタ
 //================================================
-void UninitPolygon(void)
+CPolygon3D::CPolygon3D()
+{
+	//メンバ変数をクリア
+	m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_size = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_nIdx = 0;
+	m_mtxWorld = {};
+	m_pVtxBuff = nullptr;
+	m_pTexture = nullptr;
+}
+
+//================================================
+//デストラクタ
+//================================================
+CPolygon3D::~CPolygon3D()
+{
+	/* 処理無し */
+}
+
+//================================================
+//初期化
+//================================================
+void CPolygon3D::Init()
+{
+	if (m_pPolygon != nullptr)
+	{//NULLチェック
+		return;
+	}
+
+	/* nullptrの場合 */
+
+	m_pPolygon = new CPolygon3D;	//メモリの動的確保
+
+	//メンバ変数の初期化
+	m_pPolygon->m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_pPolygon->m_size = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_pPolygon->m_nIdx = 0;
+	m_pPolygon->m_mtxWorld = {};
+	m_pPolygon->m_pVtxBuff = nullptr;
+	m_pPolygon->m_pTexture = nullptr;
+
+	//矩形のインデックスの設定
+	m_pPolygon->m_nIdx = SetRectangle3D(TEXTURE_百鬼あやめ_3);
+
+	//位置とサイズの初期設定
+	m_pPolygon->m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	m_pPolygon->m_size = D3DXVECTOR3(SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f);
+
+	/* 矩形の設定 */
+	SetPosRectangle3D(m_pPolygon->m_nIdx, m_pPolygon->m_pos);	//位置
+	SetSizeRectangle3D(m_pPolygon->m_nIdx, m_pPolygon->m_size);	//サイズ
+}
+
+//================================================
+//終了
+//================================================
+void CPolygon3D::Uninit()
 {
 	// 使うのを止める
-	StopUseRectangle3D(s_polygon.idx);
+	StopUseRectangle3D(m_pPolygon->m_nIdx);
+
+	if (m_pPolygon == nullptr)
+	{//NULLチェック
+		return;
+	}
+
+	/* nullptrではない場合 */
+
+	//メモリの解放
+	delete m_pPolygon;
+	m_pPolygon = nullptr;
 }
 
 //================================================
-//ポリゴンの更新処理
+//更新
 //================================================
-void UpdatePolygon(void)
+void CPolygon3D::Update()
 {
-
+	//位置の更新
+	SetPosRectangle3D(m_pPolygon->m_nIdx, m_pPolygon->m_pos);
 }
 
 //================================================
-//ポリゴンの描画処理
+//描画
 //================================================
-void DrawPolygon(void)
+void CPolygon3D::Draw()
 {
 	// 矩形の描画
 	DrawRectangle3D();
-}
-
-//================================================
-//ポリゴン情報の取得
-//================================================
-Polygon3D* GetPolygon(void)
-{
-	return &s_polygon;
 }

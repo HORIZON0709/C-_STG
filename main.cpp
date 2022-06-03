@@ -490,15 +490,15 @@ void DrawDebug(void)
 
 	/* ポリゴン */
 
-	Polygon3D* pPol = GetPolygon();		//ポリゴン情報のポインタ
+	//Polygon3D* pPol = GetPolygon();		//ポリゴン情報のポインタ
 
-	//見出し
-	sprintf(&aStr[nLength], "\n[  ポリゴン  ]\n");
-	nLength = (int)strlen(&aStr[0]);
+	////見出し
+	//sprintf(&aStr[nLength], "\n[  ポリゴン  ]\n");
+	//nLength = (int)strlen(&aStr[0]);
 
-	//位置
-	sprintf(&aStr[nLength], " 位置[ %.2f : %.2f : %.2f ] \n", pPol->pos.x, pPol->pos.y, pPol->pos.z);
-	nLength = (int)strlen(&aStr[0]);
+	////位置
+	//sprintf(&aStr[nLength], " 位置[ %.2f : %.2f : %.2f ] \n", pPol->pos.x, pPol->pos.y, pPol->pos.z);
+	//nLength = (int)strlen(&aStr[0]);
 
 	/* プレイヤー */
 
