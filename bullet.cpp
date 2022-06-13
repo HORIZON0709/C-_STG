@@ -5,7 +5,6 @@
 //
 //================================================
 #include "bullet.h"
-//#include "player.h"
 
 #include "rectangle3D.h"
 #include "texture.h"
@@ -21,15 +20,9 @@ CBullet* CBullet::m_apBullet[MAX_BULLET] = {};	//ポインタ
 CBullet::CBullet()
 {
 	//メンバ変数のクリア
-	m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_move = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	m_size = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	m_mtxWorld = {};
-	m_nIdx = 0;
 	m_nLife = 0;
 	m_bUse = false;
-	m_pVtxBuff = nullptr;
-	m_pTexture = nullptr;
 }
 
 //================================================
@@ -58,15 +51,9 @@ void CBullet::Init()
 		m_apBullet[i] = new CBullet;
 
 		//メンバ変数の初期化
-		m_apBullet[i]->m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 		m_apBullet[i]->m_move = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-		m_apBullet[i]->m_size = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-		m_apBullet[i]->m_mtxWorld = {};
-		m_apBullet[i]->m_nIdx = 0;
 		m_apBullet[i]->m_nLife = 0;
 		m_apBullet[i]->m_bUse = false;
-		m_apBullet[i]->m_pVtxBuff = nullptr;
-		m_apBullet[i]->m_pTexture = nullptr;
 
 		// 矩形のインデックスの設定
 		m_apBullet[i]->m_nIdx = SetRectangle3D(TEXTURE_百鬼あやめ_6);
@@ -152,7 +139,7 @@ void CBullet::Draw()
 //================================================
 //セット
 //================================================
-void CBullet::Set(const D3DXVECTOR3 pos, const D3DXVECTOR3 move)
+void CBullet::Set(const D3DXVECTOR3 pos, const D3DXVECTOR3 move, const D3DXVECTOR3 size)
 {
 	for (int i = 0; i < MAX_BULLET; i++)
 	{
@@ -163,11 +150,11 @@ void CBullet::Set(const D3DXVECTOR3 pos, const D3DXVECTOR3 move)
 
 		/* 使用していない */
 
-		m_apBullet[i]->m_pos = pos;								//位置
-		m_apBullet[i]->m_move = move;							//移動量
-		m_apBullet[i]->m_size = D3DXVECTOR3(50.0f, 50.0f, 0.0);	//サイズ
-		m_apBullet[i]->m_nLife = MAX_LIFE;						//寿命
-		m_apBullet[i]->m_bUse = true;							//『使用する』に変更
+		m_apBullet[i]->m_pos = pos;			//位置
+		m_apBullet[i]->m_move = move;		//移動量
+		m_apBullet[i]->m_size = size;		//サイズ
+		m_apBullet[i]->m_nLife = MAX_LIFE;	//寿命
+		m_apBullet[i]->m_bUse = true;		//『使用する』に変更
 
 		// 矩形のインデックスの設定
 		m_apBullet[i]->m_nIdx = SetRectangle3D(TEXTURE_百鬼あやめ_6);

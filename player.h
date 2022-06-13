@@ -7,13 +7,13 @@
 #ifndef _PLAYER_H_
 #define _PLAYER_H_
 
-#include "main.h"
+#include "polygon.h"
 
 //***************************
 //プレイヤークラスの定義
 //***************************
-class CPlayer
-{/* 基本クラス */
+class CPlayer : public CPolygon3D
+{/* CPolygon3Dの派生クラス */
 private: /* 列挙型の定義 */
 	enum class BULLET_TYPE
 	{//弾の種類
@@ -35,26 +35,20 @@ private: /* 静的メンバ変数 */
 
 public: /* コンストラクタ・デストラクタ */
 	CPlayer();
-	~CPlayer();
+	~CPlayer()override;
 
-public: /* メンバ関数 */
-	void Init();	//初期化
-	void Uninit();	//終了
-	void Update();	//更新
-	void Draw();	//描画
-private:
+public: /* オーバーライド関数 */
+	void Init()override;	//初期化
+	void Uninit()override;	//終了
+	void Update()override;	//更新
+	void Draw()override;	//描画
+private: /* メンバ関数 */
 	void Move();	//移動
 	void Shot();	//弾の発射
 
 private: /* メンバ変数 */
-	D3DXVECTOR3	m_pos;						//位置
-	D3DXVECTOR3	m_size;						//サイズ
-	int m_nIdx;								//矩形のインデックス
-	D3DXMATRIX	m_mtxWorld;					//ワールドマトリックス
-	LPDIRECT3DVERTEXBUFFER9	m_pVtxBuff;		//頂点バッファへのポインタ
-	LPDIRECT3DTEXTURE9 m_pTexture;			//テクスチャへのポインタ
-	int m_nInterval;						//弾発射の間隔をカウントする
-	int nBulletType;						//弾の種類
+	int m_nInterval;	//弾発射の間隔をカウントする
+	int nBulletType;	//弾の種類
 };
 
 #endif

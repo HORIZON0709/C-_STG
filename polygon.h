@@ -14,23 +14,23 @@
 //***************************
 class CPolygon3D
 {/* 基本クラス */
-public: /* コンストラクタ・デストラクタ */
-	CPolygon3D();
-	~CPolygon3D();
-
 public: /* 静的メンバ関数 */
 	static CPolygon3D* GetInfo();	//情報を取得
 
-public: /* メンバ関数 */
-	void Init();	//初期化
-	void Uninit();	//終了
-	void Update();	//更新
-	void Draw();	//描画
+public: /* コンストラクタ・デストラクタ */
+	CPolygon3D();
+	virtual ~CPolygon3D();
+
+public: /* 仮想関数 */
+	virtual void Init();	//初期化
+	virtual void Uninit();	//終了
+	virtual void Update();	//更新
+	virtual void Draw();	//描画
 
 private: /* 静的メンバ変数 */
 	static CPolygon3D* m_pPolygon;	//ポインタ
 
-private: /* メンバ変数 */
+protected: /* メンバ変数 */
 	D3DXVECTOR3 m_pos;					//位置
 	D3DXVECTOR3 m_size;					//サイズ
 	int m_nIdx;							//矩形のインデックス

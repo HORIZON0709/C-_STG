@@ -5,6 +5,7 @@
 //
 //================================================
 #include "polygon.h"
+
 #include "rectangle3D.h"
 #include "texture.h"
 
@@ -111,6 +112,6 @@ void CPolygon3D::Update()
 //================================================
 void CPolygon3D::Draw()
 {
-	// ‹éŒ`‚Ì•`‰æ
+	//‹éŒ`‚Ì•`‰æ
 	DrawRectangle3D();
 }

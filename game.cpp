@@ -34,6 +34,10 @@ namespace
 GAMESTATE	s_gameState = GAMESTATE_NONE;	//ゲームの状態
 int			s_nCounterGameState = 0;		//状態管理カウンター
 bool		s_pPause = false;				//ポーズ中かどうか
+
+CPolygon3D s_polygon;
+CPlayer s_player;
+CBullet s_bullet;
 }//namespaceはここまで
 
 //================================================
@@ -41,15 +45,11 @@ bool		s_pPause = false;				//ポーズ中かどうか
 //================================================
 void InitGame(void)
 {
-	CPlayer* pPlayer = nullptr;
-	CBullet* pBullet = nullptr;
-	CPolygon3D* pPolygon = nullptr;
-
 	InitCamera();	//カメラ
 	InitLight();	//ライト
-	pBullet->Init();	//弾
-	pPlayer->Init();	//プレイヤー
-	pPolygon->Init();	//ポリゴン
+	s_polygon.Init();	//ポリゴン
+	s_player.Init();	//プレイヤー
+	s_bullet.Init();	//弾
 	InitPause();	//ポーズ
 
 	//タイムの設定
@@ -66,18 +66,14 @@ void InitGame(void)
 //================================================
 void UninitGame(void)
 {
-	CPlayer* pPlayer = nullptr;
-	CBullet* pBullet = nullptr;
-	CPolygon3D* pPolygon = nullptr;
-
 	//サウンドの停止
 	StopSound();
 
 	UninitCamera();		//カメラ
 	UninitLight();		//ライト
-	pBullet->Uninit();		//弾
-	pPlayer->Uninit();		//プレイヤー
-	pPolygon->Uninit();	//ポリゴン
+	s_bullet.Uninit();		//弾
+	s_player.Uninit();		//プレイヤー
+	s_polygon.Uninit();	//ポリゴン
 	UninitTime();		//タイム
 	UninitPause();		//ポーズ
 }
@@ -114,18 +110,14 @@ void UpdateGame(void)
 
 	/* ポーズ中でなければ */
 
-	CPlayer* pPlayer = nullptr;
-	CBullet* pBullet = nullptr;
-	CPolygon3D* pPolygon = nullptr;
-
 	switch (s_gameState)
 	{
 	case GAMESTATE_NORMAL:	/* 通常状態 */
 		UpdateCamera();		//カメラ
 		UpdateLight();		//ライト
-		pBullet->Update();		//弾
-		pPlayer->Update();		//プレイヤー
-		pPolygon->Update();		//ポリゴン
+		s_polygon.Update();		//ポリゴン
+		s_bullet.Update();		//弾
+		s_player.Update();		//プレイヤー
 		UpdateTime();		//タイム
 		break;
 
@@ -149,17 +141,13 @@ void UpdateGame(void)
 //================================================
 void DrawGame(void)
 {
-	CPlayer* pPlayer = nullptr;
-	CBullet* pBullet = nullptr;
-	CPolygon3D* pPolygon = nullptr;
-
 	//カメラの設定
 	SetCamera();
 
-	pPolygon->Draw();	//ポリゴン
-	pPlayer->Draw();	//プレイヤー
+	s_polygon.Draw();	//ポリゴン
+	s_bullet.Draw();	//弾
+	s_player.Draw();	//プレイヤー
 	DrawTime();		//タイム
-	pBullet->Draw();	//弾
 
 	if (s_pPause)
 	{//ポーズ中
