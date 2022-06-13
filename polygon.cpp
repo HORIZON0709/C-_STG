@@ -25,15 +25,15 @@ CPolygon3D* CPolygon3D::GetInfo()
 //================================================
 //コンストラクタ
 //================================================
-CPolygon3D::CPolygon3D()
+CPolygon3D::CPolygon3D():
+	m_pos(D3DXVECTOR3(0.0f, 0.0f, 0.0f)),
+	m_size(D3DXVECTOR3(0.0f, 0.0f, 0.0f)),
+	m_nIdx(0),
+	m_pVtxBuff(nullptr),
+	m_pTexture(nullptr)
 {
 	//メンバ変数をクリア
-	m_pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	m_size = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	m_nIdx = 0;
 	m_mtxWorld = {};
-	m_pVtxBuff = nullptr;
-	m_pTexture = nullptr;
 }
 
 //================================================
@@ -41,7 +41,6 @@ CPolygon3D::CPolygon3D()
 //================================================
 CPolygon3D::~CPolygon3D()
 {
-	/* 処理無し */
 }
 
 //================================================

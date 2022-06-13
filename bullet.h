@@ -19,9 +19,6 @@ public: /* 定数の定義 */
 	static const int MAX_BULLET = 48;	//弾の最大数
 	static const int MAX_LIFE = 150;	//弾の寿命
 
-private: /* 静的メンバ変数 */
-	static CBullet* m_apBullet[MAX_BULLET];		//弾の情報
-
 public: /* コンストラクタ・デストラクタ */
 	CBullet();
 	~CBullet()override;
@@ -38,6 +35,9 @@ public:/* Set系 */
 	const D3DXVECTOR3 move ---> 移動量
 	*/
 	void Set(const D3DXVECTOR3 pos, const D3DXVECTOR3 move, const D3DXVECTOR3 size);
+
+private: /* 静的メンバ変数 */
+	static CBullet* m_apBullet[MAX_BULLET];		//弾の情報
 
 private: /* メンバ変数 */
 	D3DXVECTOR3 m_move;	//移動量
