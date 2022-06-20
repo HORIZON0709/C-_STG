@@ -7,7 +7,7 @@
 #ifndef _PLAYER_H_
 #define _PLAYER_H_
 
-#include "polygon.h"
+#include "polygon3D.h"
 
 //***************************
 //プレイヤークラスの定義
@@ -30,21 +30,21 @@ private: /* 定数の定義 */
 public: /* 静的メンバ関数 */
 	static CPlayer* GetInfo();	//情報を取得
 
-private: /* 静的メンバ変数 */
-	static CPlayer* m_pPlayer;	//プレイヤー情報
-
 public: /* コンストラクタ・デストラクタ */
 	CPlayer();
-	~CPlayer()override;
+	~CPlayer() override;
 
 public: /* オーバーライド関数 */
-	void Init()override;	//初期化
-	void Uninit()override;	//終了
-	void Update()override;	//更新
-	void Draw()override;	//描画
+	void Init() override;	//初期化
+	void Uninit() override;	//終了
+	void Update() override;	//更新
+	void Draw() override;	//描画
 private: /* メンバ関数 */
 	void Move();	//移動
 	void Shot();	//弾の発射
+
+private: /* 静的メンバ変数 */
+	static CPlayer* m_pPlayer;	//プレイヤー情報
 
 private: /* メンバ変数 */
 	int m_nInterval;	//弾発射の間隔をカウントする

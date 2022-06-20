@@ -8,7 +8,7 @@
 #define _BULLET_H_
 
 #include "main.h"
-#include "polygon.h"
+#include "polygon3D.h"
 
 //***************************
 //’eƒNƒ‰ƒX‚Ì’è‹`

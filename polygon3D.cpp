@@ -1,10 +1,10 @@
 //================================================
 //
-//C++_STG[polygon.cpp]
+//C++_STG[polygon3D.cpp]
 //Author:Kishimoto Eiji
 //
 //================================================
-#include "polygon.h"
+#include "polygon3D.h"
 
 #include "rectangle3D.h"
 #include "texture.h"

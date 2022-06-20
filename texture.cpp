@@ -19,10 +19,11 @@
 namespace
 {
 const char *s_FileName[] =
-{// ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX	
-	"data/TEXTURE/•S‹S‚ ‚â‚ß_3.jpg",	// ‰¼‰æ‘œ1
-	"data/TEXTURE/•S‹S‚ ‚â‚ß_4.jpg",	// ‰¼‰æ‘œ2
-	"data/TEXTURE/•S‹S‚ ‚â‚ß_6.jpg",	// ‰¼‰æ‘œ3
+{// ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
+	"data/TEXTURE/•S‹S‚ ‚â‚ß_1.jpg",	// ‰¼‰æ‘œ
+	"data/TEXTURE/•S‹S‚ ‚â‚ß_3.jpg",	// ‰¼‰æ‘œ
+	"data/TEXTURE/•S‹S‚ ‚â‚ß_4.jpg",	// ‰¼‰æ‘œ
+	"data/TEXTURE/•S‹S‚ ‚â‚ß_6.jpg",	// ‰¼‰æ‘œ
 };
 }// namespace‚Í‚±‚±‚Ü‚Å
 

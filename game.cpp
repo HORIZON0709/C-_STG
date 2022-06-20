@@ -10,9 +10,10 @@
 #include "pause.h"
 #include "camera.h"
 #include "light.h"
-#include "polygon.h"
+#include "polygon3D.h"
 #include "time.h"
 #include "bullet.h"
+#include "enemy.h"
 
 #include "input.h"
 #include "mode.h"
@@ -38,6 +39,7 @@ bool		s_pPause = false;				//ポーズ中かどうか
 CPolygon3D s_polygon;
 CPlayer s_player;
 CBullet s_bullet;
+CEnemy s_enemy;
 }//namespaceはここまで
 
 //================================================
@@ -50,6 +52,7 @@ void InitGame(void)
 	s_polygon.Init();	//ポリゴン
 	s_player.Init();	//プレイヤー
 	s_bullet.Init();	//弾
+	s_enemy.Init();		//敵
 	InitPause();	//ポーズ
 
 	//タイムの設定
@@ -73,7 +76,8 @@ void UninitGame(void)
 	UninitLight();		//ライト
 	s_bullet.Uninit();		//弾
 	s_player.Uninit();		//プレイヤー
-	s_polygon.Uninit();	//ポリゴン
+	s_enemy.Uninit();		//敵
+	s_polygon.Uninit();		//ポリゴン
 	UninitTime();		//タイム
 	UninitPause();		//ポーズ
 }
@@ -118,6 +122,7 @@ void UpdateGame(void)
 		s_polygon.Update();		//ポリゴン
 		s_bullet.Update();		//弾
 		s_player.Update();		//プレイヤー
+		s_enemy.Update();		//敵
 		UpdateTime();		//タイム
 		break;
 
@@ -147,6 +152,7 @@ void DrawGame(void)
 	s_polygon.Draw();	//ポリゴン
 	s_bullet.Draw();	//弾
 	s_player.Draw();	//プレイヤー
+	s_enemy.Draw();		//敵
 	DrawTime();		//タイム
 
 	if (s_pPause)

@@ -7,7 +7,7 @@
 #include "camera.h"
 #include "input.h"
 #include "player.h"
-#include "polygon.h"
+#include "polygon3D.h"
 
 //***************************
 //’è”‚Ì’è‹`

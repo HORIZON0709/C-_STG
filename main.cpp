@@ -8,7 +8,7 @@
 #include "input.h"
 
 #include "camera.h"
-#include "polygon.h"
+#include "polygon3D.h"
 #include "player.h"
 
 #include "fade.h"

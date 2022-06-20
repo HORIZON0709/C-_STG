@@ -12,9 +12,10 @@
 //==================================================
 typedef enum
 {
-	TEXTURE_•S‹S‚ ‚â‚ß_3 = 0,	// ‰¼‰æ‘œ1
-	TEXTURE_•S‹S‚ ‚â‚ß_4,		// ‰¼‰æ‘œ2
-	TEXTURE_•S‹S‚ ‚â‚ß_6,		// ‰¼‰æ‘œ3
+	TEXTURE_•S‹S‚ ‚â‚ß_1 = 0,	// ‰¼‰æ‘œ1
+	TEXTURE_•S‹S‚ ‚â‚ß_3 ,		// ‰¼‰æ‘œ2
+	TEXTURE_•S‹S‚ ‚â‚ß_4,		// ‰¼‰æ‘œ3
+	TEXTURE_•S‹S‚ ‚â‚ß_6,		// ‰¼‰æ‘œ4
 	TEXTURE_MAX,
 	TEXTURE_NONE,	// Žg—p‚µ‚È‚¢
 }TEXTURE;
